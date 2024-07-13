@@ -16,5 +16,15 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = textBox1.Text;
+        }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            textBox2.Text = textBox1.Text;
+        }
     }
 }
