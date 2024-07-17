@@ -28,5 +28,11 @@ namespace WindowsFormsApp1
             Form form1 = new Form1();
             form1.ShowDialog();
         }
+
+        private void MsgBox_Click(object sender, EventArgs e)
+        {
+            Form form1 = new Form3();
+            form1.ShowDialog();
+        }
     }
 }
