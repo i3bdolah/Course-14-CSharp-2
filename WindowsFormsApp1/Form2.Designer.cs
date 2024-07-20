@@ -31,12 +31,13 @@
             this.btnShow = new System.Windows.Forms.Button();
             this.btnShowDialog = new System.Windows.Forms.Button();
             this.MsgBox = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnShow
             // 
             this.btnShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShow.Location = new System.Drawing.Point(285, 110);
+            this.btnShow.Location = new System.Drawing.Point(279, 85);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(203, 110);
             this.btnShow.TabIndex = 0;
@@ -48,7 +49,7 @@
             // btnShowDialog
             // 
             this.btnShowDialog.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowDialog.Location = new System.Drawing.Point(285, 254);
+            this.btnShowDialog.Location = new System.Drawing.Point(279, 234);
             this.btnShowDialog.Name = "btnShowDialog";
             this.btnShowDialog.Size = new System.Drawing.Size(203, 110);
             this.btnShowDialog.TabIndex = 1;
@@ -59,7 +60,7 @@
             // MsgBox
             // 
             this.MsgBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MsgBox.Location = new System.Drawing.Point(285, 404);
+            this.MsgBox.Location = new System.Drawing.Point(279, 383);
             this.MsgBox.Name = "MsgBox";
             this.MsgBox.Size = new System.Drawing.Size(203, 110);
             this.MsgBox.TabIndex = 2;
@@ -67,11 +68,23 @@
             this.MsgBox.UseVisualStyleBackColor = true;
             this.MsgBox.Click += new System.EventHandler(this.MsgBox_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(279, 532);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(203, 110);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Check Box";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 593);
+            this.ClientSize = new System.Drawing.Size(800, 720);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.MsgBox);
             this.Controls.Add(this.btnShowDialog);
             this.Controls.Add(this.btnShow);
@@ -86,5 +99,6 @@
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.Button btnShowDialog;
         private System.Windows.Forms.Button MsgBox;
+        private System.Windows.Forms.Button button1;
     }
 }

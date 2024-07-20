@@ -34,5 +34,11 @@ namespace WindowsFormsApp1
             Form form1 = new Form3();
             form1.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form newForm = new CheckBoxForm();
+            newForm.ShowDialog();
+        }
     }
 }
