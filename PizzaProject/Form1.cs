@@ -17,7 +17,39 @@ namespace PizzaProject
             InitializeComponent();
         }
 
-        int TotalPrice = 0;
+        //int TotalPrice = 0;
+
+        List<string> CheckboxesList = new List<string> {};
+
+        //private string ArrayToString(string[] CheckboxesArr)
+        //{
+        //    string str = "";
+
+        //  for (int i = 0; i < CheckboxesArr.Length; i++)
+        //    {
+        //        str += ", " + CheckboxesArr[i];
+        //    }
+        //  return str;
+        //}
+
+        //private string[] ShiftArrayElement(string[] CheckboxesArr, string Element)
+        //{
+        //    string[] NewArr = new string[CheckboxesArr.Length - 1];
+
+        //    for (int i = 0;i < NewArr.Length;i++)
+        //    {
+        //        int j = 0;
+        //        j++;
+
+        //        if (CheckboxesArr[j] == Element)
+        //        {
+        //            j++;
+        //        }
+                
+        //        NewArr[i] = CheckboxesArr[j];
+        //    }
+        //    return NewArr;
+        //}
 
         private void GbCrust_Enter(object sender, EventArgs e)
         {
@@ -42,12 +74,30 @@ namespace PizzaProject
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             // Must all fields checked
-            MessageBox.Show(TotalPrice.ToString());
+            //MessageBox.Show(TotalPrice.ToString());
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            // Make all fields unchecked
+            RbSmall.Checked = false;
+            RbMedium.Checked = false;
+            RbLarge.Checked = false;
+            RbThin.Checked = false;
+            RbThick.Checked = false;
+            CbExtraCheese.Checked = false;
+            CbMushrooms.Checked = false;
+            CbTomatoes.Checked = false;
+            CbOnions.Checked = false;
+            CbOlives.Checked = false;
+            CbGreenPeppers.Checked = false;
+            RbTakeIn.Checked = false;
+            RbTakeAway.Checked = false;
+
+            LblSize.Text = " ";
+            LblCrust.Text = " ";
+            LblToppings.Text = " ";
+            LblWhereToEat.Text = " ";
+
         }
 
         private void GbSummary_Enter(object sender, EventArgs e)
@@ -61,14 +111,13 @@ namespace PizzaProject
 
             if (RbSmall.Checked)
             {
-                TotalPrice =+ MyTagValue;
-                lblSize.Text = RbSmall.Text;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
+                LblSize.Text = RbSmall.Text;
             }
             else
             {
-                TotalPrice =- MyTagValue;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
             }
-
         }
 
         private void RbMedium_CheckedChanged(object sender, EventArgs e)
@@ -77,12 +126,12 @@ namespace PizzaProject
 
             if (RbMedium.Checked)
             {
-                TotalPrice =+ MyTagValue;
-                lblSize.Text = RbMedium.Text;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
+                LblSize.Text = RbMedium.Text;
             }
             else
             {
-                TotalPrice =- MyTagValue;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
             }
         }
 
@@ -92,12 +141,12 @@ namespace PizzaProject
 
             if (RbLarge.Checked)
             {
-                TotalPrice =+ MyTagValue;
-                lblSize.Text = RbLarge.Text;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
+                LblSize.Text = RbLarge.Text;
             }
             else
             {
-                TotalPrice =- MyTagValue;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
             }
         }
 
@@ -107,11 +156,12 @@ namespace PizzaProject
 
             if (RbThin.Checked)
             {
-                TotalPrice =+ MyTagValue;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
+                LblCrust.Text = RbThin.Text;
             }
             else
             {
-                TotalPrice =- MyTagValue;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
             }
         }
 
@@ -121,11 +171,12 @@ namespace PizzaProject
 
             if (RbThick.Checked)
             {
-                TotalPrice =+ MyTagValue;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
+                LblCrust.Text = RbThick.Text;
             }
             else
             {
-                TotalPrice =- MyTagValue;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
             }
         }
 
@@ -135,11 +186,15 @@ namespace PizzaProject
 
             if (CbExtraCheese.Checked)
             {
-                TotalPrice =+ MyTagValue;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
+                CheckboxesList.Add(CbExtraCheese.Text);
+                LblToppings.Text = String.Join(", ", CheckboxesList);
             }
             else
             {
-                TotalPrice =- MyTagValue;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
+                CheckboxesList.Remove(CbExtraCheese.Text);
+                LblToppings.Text = String.Join(", ", CheckboxesList);
             }
         }
 
@@ -149,11 +204,15 @@ namespace PizzaProject
 
             if (CbMushrooms.Checked)
             {
-                TotalPrice =+ MyTagValue;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
+                CheckboxesList.Add(CbMushrooms.Text);
+                LblToppings.Text = String.Join(", ", CheckboxesList);
             }
             else
             {
-                TotalPrice =- MyTagValue;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
+                CheckboxesList.Remove(CbMushrooms.Text);
+                LblToppings.Text = String.Join(", ", CheckboxesList);
             }
         }
 
@@ -163,11 +222,15 @@ namespace PizzaProject
 
             if (CbTomatoes.Checked)
             {
-                TotalPrice =+ MyTagValue;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
+                CheckboxesList.Add(CbTomatoes.Text);
+                LblToppings.Text = String.Join(", ", CheckboxesList);
             }
             else
             {
-                TotalPrice =- MyTagValue;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
+                CheckboxesList.Remove(CbTomatoes.Text);
+                LblToppings.Text = String.Join(", ", CheckboxesList);
             }
         }
 
@@ -177,11 +240,15 @@ namespace PizzaProject
 
             if (CbOnions.Checked)
             {
-                TotalPrice =+ MyTagValue;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
+                CheckboxesList.Add(CbOnions.Text);
+                LblToppings.Text = String.Join(", ", CheckboxesList);
             }
             else
             {
-                TotalPrice =- MyTagValue;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
+                CheckboxesList.Remove(CbOnions.Text);
+                LblToppings.Text = String.Join(", ", CheckboxesList);
             }
         }
 
@@ -191,11 +258,15 @@ namespace PizzaProject
 
             if (CbOlives.Checked)
             {
-                TotalPrice =+ MyTagValue;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
+                CheckboxesList.Add(CbOlives.Text);
+                LblToppings.Text = String.Join(", ", CheckboxesList);
             }
             else
             {
-                TotalPrice =- MyTagValue;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
+                CheckboxesList.Remove(CbOlives.Text);
+                LblToppings.Text = String.Join(", ", CheckboxesList);
             }
         }
 
@@ -205,12 +276,31 @@ namespace PizzaProject
 
             if (CbGreenPeppers.Checked)
             {
-                TotalPrice =+ MyTagValue;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
+                CheckboxesList.Add(CbGreenPeppers.Text);
+                LblToppings.Text = String.Join(", ", CheckboxesList);
             }
             else
             {
-                TotalPrice =- MyTagValue;
+                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
+                CheckboxesList.Remove(CbGreenPeppers.Text);
+                LblToppings.Text = String.Join(", ", CheckboxesList);
             }
+        }
+
+        private void GbSize_EnabledChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("Enable Changed");
+        }
+
+        private void RbTakeIn_CheckedChanged(object sender, EventArgs e)
+        {
+            LblWhereToEat.Text = RbTakeIn.Text;
+        }
+
+        private void RbTakeAway_CheckedChanged(object sender, EventArgs e)
+        {
+            LblWhereToEat.Text = RbTakeAway.Text;
         }
     }
 }
