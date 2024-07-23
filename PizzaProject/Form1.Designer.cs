@@ -79,7 +79,6 @@
             this.GbSize.TabStop = false;
             this.GbSize.Text = "Size";
             this.GbSize.EnabledChanged += new System.EventHandler(this.GbSize_EnabledChanged);
-            this.GbSize.Enter += new System.EventHandler(this.GbSize_Enter);
             // 
             // RbLarge
             // 
@@ -134,7 +133,6 @@
             this.GbToppings.TabIndex = 1;
             this.GbToppings.TabStop = false;
             this.GbToppings.Text = "Toppings";
-            this.GbToppings.Enter += new System.EventHandler(this.GbToppings_Enter);
             // 
             // CbGreenPeppers
             // 
@@ -218,7 +216,6 @@
             this.GbCrust.TabIndex = 1;
             this.GbCrust.TabStop = false;
             this.GbCrust.Text = "Crust";
-            this.GbCrust.Enter += new System.EventHandler(this.GbCrust_Enter);
             // 
             // RbThick
             // 
@@ -256,7 +253,6 @@
             this.GbWhereToEat.TabIndex = 2;
             this.GbWhereToEat.TabStop = false;
             this.GbWhereToEat.Text = "Where To Eat";
-            this.GbWhereToEat.Enter += new System.EventHandler(this.GbWhereToEat_Enter);
             // 
             // RbTakeAway
             // 

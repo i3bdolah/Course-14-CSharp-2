@@ -19,62 +19,126 @@ namespace PizzaProject
 
         //int TotalPrice = 0;
 
-        List<string> CheckboxesList = new List<string> {};
+        List<string> CheckboxesList = new List<string> { };
 
-        //private string ArrayToString(string[] CheckboxesArr)
-        //{
-        //    string str = "";
-
-        //  for (int i = 0; i < CheckboxesArr.Length; i++)
-        //    {
-        //        str += ", " + CheckboxesArr[i];
-        //    }
-        //  return str;
-        //}
-
-        //private string[] ShiftArrayElement(string[] CheckboxesArr, string Element)
-        //{
-        //    string[] NewArr = new string[CheckboxesArr.Length - 1];
-
-        //    for (int i = 0;i < NewArr.Length;i++)
-        //    {
-        //        int j = 0;
-        //        j++;
-
-        //        if (CheckboxesArr[j] == Element)
-        //        {
-        //            j++;
-        //        }
-                
-        //        NewArr[i] = CheckboxesArr[j];
-        //    }
-        //    return NewArr;
-        //}
-
-        private void GbCrust_Enter(object sender, EventArgs e)
+        Byte GetSizeTotal()
         {
-
+            if (RbSmall.Checked)
+            {
+                return Convert.ToByte(RbSmall.Tag);
+            }
+            else if (RbMedium.Checked)
+            {
+                return Convert.ToByte(RbMedium.Tag);
+            }
+            else
+            {
+                return Convert.ToByte(RbLarge.Tag);
+            }
         }
 
-        private void GbSize_Enter(object sender, EventArgs e)
+        Byte GetCrustTotal()
         {
-
+            if (RbThin.Checked)
+            {
+                return Convert.ToByte(RbThin.Tag);
+            }
+            else
+            {
+                return Convert.ToByte(RbThick.Tag);
+            }
         }
 
-        private void GbWhereToEat_Enter(object sender, EventArgs e)
+        Byte GetToppingsTotal()
         {
+            Byte sum = 0;
 
+            if (CbExtraCheese.Checked)
+            {
+                sum += Convert.ToByte(CbExtraCheese.Tag);
+            }
+            if (CbMushrooms.Checked)
+            {
+                sum += Convert.ToByte(CbMushrooms.Tag);
+
+            }
+            if (CbTomatoes.Checked)
+            {
+                sum += Convert.ToByte(CbTomatoes.Tag);
+
+            }
+            if (CbOnions.Checked)
+            {
+                sum += Convert.ToByte(CbOnions.Tag);
+
+            }
+            if (CbOlives.Checked)
+            {
+                sum += Convert.ToByte(CbOlives.Tag);
+
+            }
+            if (CbGreenPeppers.Checked)
+            {
+                sum += Convert.ToByte(CbGreenPeppers.Tag);
+
+            }
+
+            return sum; 
         }
 
-        private void GbToppings_Enter(object sender, EventArgs e)
+        void UpdateTotalPrice()
         {
+            LblTotal.Text = (GetSizeTotal() + GetCrustTotal() + GetToppingsTotal()).ToString();
+        }
 
+        void UpdateSize()
+        {
+            UpdateTotalPrice();
+
+            if (RbSmall.Checked)
+            {
+                LblSize.Text = RbSmall.Text;
+            }
+            else if (RbMedium.Checked)
+            {
+                LblSize.Text = RbMedium.Text;
+            }
+            else
+            {
+                LblSize.Text = RbLarge.Text;
+            }
+        }
+
+        void UpdateCrust()
+        {
+            UpdateTotalPrice();
+
+            if (RbThin.Checked)
+            {
+                LblCrust.Text = RbThin.Text;
+            }
+            else
+            {
+                LblCrust.Text = RbThick.Text;
+            }
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            // Must all fields checked
-            //MessageBox.Show(TotalPrice.ToString());
+            if (MessageBox.Show("Confirm Order", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                GbSize.Enabled = false;
+                GbCrust.Enabled = false;
+                GbToppings.Enabled = false;
+                GbWhereToEat.Enabled = false;
+                //btnSubmit.Enabled = false;
+
+                MessageBox.Show("Order Placed Successfully.");
+            }
+            else
+            {
+                MessageBox.Show("Order Incomplete.");
+            }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -98,86 +162,37 @@ namespace PizzaProject
             LblToppings.Text = " ";
             LblWhereToEat.Text = " ";
 
-        }
-
-        private void GbSummary_Enter(object sender, EventArgs e)
-        {
+            GbSize.Enabled = true;
+            GbCrust.Enabled = true;
+            GbToppings.Enabled = true;
+            GbWhereToEat.Enabled = true;
+            btnSubmit.Enabled = true;
 
         }
 
         private void RbSmall_CheckedChanged(object sender, EventArgs e)
         {
-            Byte MyTagValue = Byte.Parse(RbSmall.Tag.ToString());
-
-            if (RbSmall.Checked)
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
-                LblSize.Text = RbSmall.Text;
-            }
-            else
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
-            }
+            UpdateSize();
         }
 
         private void RbMedium_CheckedChanged(object sender, EventArgs e)
         {
-            Byte MyTagValue = Byte.Parse(RbMedium.Tag.ToString());
-
-            if (RbMedium.Checked)
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
-                LblSize.Text = RbMedium.Text;
-            }
-            else
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
-            }
+            UpdateSize();
         }
 
         private void RbLarge_CheckedChanged(object sender, EventArgs e)
         {
-            Byte MyTagValue = Byte.Parse(RbLarge.Tag.ToString());
-
-            if (RbLarge.Checked)
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
-                LblSize.Text = RbLarge.Text;
-            }
-            else
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
-            }
+            UpdateSize();
         }
 
         private void RbThin_CheckedChanged(object sender, EventArgs e)
         {
-            Byte MyTagValue = Byte.Parse(RbThin.Tag.ToString());
-
-            if (RbThin.Checked)
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
-                LblCrust.Text = RbThin.Text;
-            }
-            else
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
-            }
+            UpdateCrust();
         }
 
         private void RbThick_CheckedChanged(object sender, EventArgs e)
         {
-            Byte MyTagValue = Byte.Parse(RbThick.Tag.ToString());
-
-            if (RbThick.Checked)
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
-                LblCrust.Text = RbThick.Text;
-            }
-            else
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
-            }
+            UpdateCrust();
         }
 
         private void CbExtraCheese_CheckedChanged(object sender, EventArgs e)
