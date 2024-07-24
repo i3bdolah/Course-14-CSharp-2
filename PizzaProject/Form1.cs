@@ -17,24 +17,22 @@ namespace PizzaProject
             InitializeComponent();
         }
 
-        //int TotalPrice = 0;
-
-        List<string> CheckboxesList = new List<string> { };
-
         Byte GetSizeTotal()
         {
             if (RbSmall.Checked)
             {
                 return Convert.ToByte(RbSmall.Tag);
             }
-            else if (RbMedium.Checked)
+            if (RbMedium.Checked)
             {
                 return Convert.ToByte(RbMedium.Tag);
             }
-            else
+            if (RbLarge.Checked)
             {
                 return Convert.ToByte(RbLarge.Tag);
             }
+
+            return Convert.ToByte(0); // To Please the compiler
         }
 
         Byte GetCrustTotal()
@@ -43,10 +41,12 @@ namespace PizzaProject
             {
                 return Convert.ToByte(RbThin.Tag);
             }
-            else
+            if (RbThick.Checked)
             {
                 return Convert.ToByte(RbThick.Tag);
             }
+
+            return Convert.ToByte(0); // To Please the compiler
         }
 
         Byte GetToppingsTotal()
@@ -83,7 +83,7 @@ namespace PizzaProject
 
             }
 
-            return sum; 
+            return sum;
         }
 
         void UpdateTotalPrice()
@@ -98,14 +98,17 @@ namespace PizzaProject
             if (RbSmall.Checked)
             {
                 LblSize.Text = RbSmall.Text;
+                return;
             }
-            else if (RbMedium.Checked)
+            if (RbMedium.Checked)
             {
                 LblSize.Text = RbMedium.Text;
+                return;
             }
-            else
+            if (RbLarge.Checked)
             {
                 LblSize.Text = RbLarge.Text;
+                return;
             }
         }
 
@@ -116,11 +119,55 @@ namespace PizzaProject
             if (RbThin.Checked)
             {
                 LblCrust.Text = RbThin.Text;
+                return;
+            }
+            if (RbThick.Checked)
+            {
+                LblCrust.Text = RbThick.Text;
+                return;
+            }
+        }
+
+        void UpdateToppings()
+        {
+            UpdateTotalPrice();
+
+            List<string> CheckboxesList = new List<string> { };
+
+            if (CbExtraCheese.Checked)
+            {
+                CheckboxesList.Add(CbExtraCheese.Text);
+            }
+            if (CbMushrooms.Checked)
+            {
+                CheckboxesList.Add(CbMushrooms.Text);
+            }
+            if (CbTomatoes.Checked)
+            {
+                CheckboxesList.Add(CbTomatoes.Text);
+            }
+            if (CbOlives.Checked)
+            {
+                CheckboxesList.Add(CbOlives.Text);
+            }
+            if (CbOnions.Checked)
+            {
+                CheckboxesList.Add(CbOnions.Text);
+            }
+            if (CbGreenPeppers.Checked)
+            {
+                CheckboxesList.Add(CbGreenPeppers.Text);
+            }
+
+            if (CheckboxesList.Count() == 0)
+            {
+                LblToppings.Text = "No Toppings.";
             }
             else
             {
-                LblCrust.Text = RbThick.Text;
+                LblToppings.Text = String.Join(", ", CheckboxesList);
             }
+
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -197,115 +244,32 @@ namespace PizzaProject
 
         private void CbExtraCheese_CheckedChanged(object sender, EventArgs e)
         {
-            Byte MyTagValue = Byte.Parse(CbExtraCheese.Tag.ToString());
-
-            if (CbExtraCheese.Checked)
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
-                CheckboxesList.Add(CbExtraCheese.Text);
-                LblToppings.Text = String.Join(", ", CheckboxesList);
-            }
-            else
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
-                CheckboxesList.Remove(CbExtraCheese.Text);
-                LblToppings.Text = String.Join(", ", CheckboxesList);
-            }
+            UpdateToppings();
         }
 
         private void CbMushrooms_CheckedChanged(object sender, EventArgs e)
         {
-            Byte MyTagValue = Byte.Parse(CbMushrooms.Tag.ToString());
-
-            if (CbMushrooms.Checked)
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
-                CheckboxesList.Add(CbMushrooms.Text);
-                LblToppings.Text = String.Join(", ", CheckboxesList);
-            }
-            else
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
-                CheckboxesList.Remove(CbMushrooms.Text);
-                LblToppings.Text = String.Join(", ", CheckboxesList);
-            }
+            UpdateToppings();
         }
 
         private void CbTomatoes_CheckedChanged(object sender, EventArgs e)
         {
-            Byte MyTagValue = Byte.Parse(CbTomatoes.Tag.ToString());
-
-            if (CbTomatoes.Checked)
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
-                CheckboxesList.Add(CbTomatoes.Text);
-                LblToppings.Text = String.Join(", ", CheckboxesList);
-            }
-            else
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
-                CheckboxesList.Remove(CbTomatoes.Text);
-                LblToppings.Text = String.Join(", ", CheckboxesList);
-            }
+            UpdateToppings();
         }
 
         private void CbOnions_CheckedChanged(object sender, EventArgs e)
         {
-            Byte MyTagValue = Byte.Parse(CbOnions.Tag.ToString());
-
-            if (CbOnions.Checked)
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
-                CheckboxesList.Add(CbOnions.Text);
-                LblToppings.Text = String.Join(", ", CheckboxesList);
-            }
-            else
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
-                CheckboxesList.Remove(CbOnions.Text);
-                LblToppings.Text = String.Join(", ", CheckboxesList);
-            }
+            UpdateToppings();
         }
 
         private void CbOlives_CheckedChanged(object sender, EventArgs e)
         {
-            Byte MyTagValue = Byte.Parse(CbOlives.Tag.ToString());
-
-            if (CbOlives.Checked)
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
-                CheckboxesList.Add(CbOlives.Text);
-                LblToppings.Text = String.Join(", ", CheckboxesList);
-            }
-            else
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
-                CheckboxesList.Remove(CbOlives.Text);
-                LblToppings.Text = String.Join(", ", CheckboxesList);
-            }
+            UpdateToppings();
         }
 
         private void CbGreenPeppers_CheckedChanged(object sender, EventArgs e)
         {
-            Byte MyTagValue = Byte.Parse(CbGreenPeppers.Tag.ToString());
-
-            if (CbGreenPeppers.Checked)
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) + MyTagValue).ToString();
-                CheckboxesList.Add(CbGreenPeppers.Text);
-                LblToppings.Text = String.Join(", ", CheckboxesList);
-            }
-            else
-            {
-                LblTotal.Text = (Convert.ToByte(LblTotal.Text) - MyTagValue).ToString();
-                CheckboxesList.Remove(CbGreenPeppers.Text);
-                LblToppings.Text = String.Join(", ", CheckboxesList);
-            }
-        }
-
-        private void GbSize_EnabledChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show("Enable Changed");
+            UpdateToppings();
         }
 
         private void RbTakeIn_CheckedChanged(object sender, EventArgs e)

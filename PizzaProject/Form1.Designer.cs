@@ -78,7 +78,6 @@
             this.GbSize.TabIndex = 0;
             this.GbSize.TabStop = false;
             this.GbSize.Text = "Size";
-            this.GbSize.EnabledChanged += new System.EventHandler(this.GbSize_EnabledChanged);
             // 
             // RbLarge
             // 
@@ -225,7 +224,7 @@
             this.RbThick.Size = new System.Drawing.Size(52, 17);
             this.RbThick.TabIndex = 4;
             this.RbThick.TabStop = true;
-            this.RbThick.Tag = "20";
+            this.RbThick.Tag = "10";
             this.RbThick.Text = "Thick";
             this.RbThick.UseVisualStyleBackColor = true;
             this.RbThick.CheckedChanged += new System.EventHandler(this.RbThick_CheckedChanged);
@@ -238,7 +237,7 @@
             this.RbThin.Size = new System.Drawing.Size(46, 17);
             this.RbThin.TabIndex = 3;
             this.RbThin.TabStop = true;
-            this.RbThin.Tag = "10";
+            this.RbThin.Tag = "0";
             this.RbThin.Text = "Thin";
             this.RbThin.UseVisualStyleBackColor = true;
             this.RbThin.CheckedChanged += new System.EventHandler(this.RbThin_CheckedChanged);
@@ -393,9 +392,9 @@
             this.LblToppings.Location = new System.Drawing.Point(19, 110);
             this.LblToppings.MaximumSize = new System.Drawing.Size(200, 0);
             this.LblToppings.Name = "LblToppings";
-            this.LblToppings.Size = new System.Drawing.Size(28, 13);
+            this.LblToppings.Size = new System.Drawing.Size(71, 13);
             this.LblToppings.TabIndex = 8;
-            this.LblToppings.Text = "       ";
+            this.LblToppings.Text = "No Toppings.";
             // 
             // LblSize
             // 
