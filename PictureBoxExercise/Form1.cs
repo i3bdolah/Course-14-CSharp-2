@@ -42,5 +42,17 @@ namespace PictureBoxExercise
             label1.Text = ((RadioButton)sender).Text;
             pictureBox1.Image = Image.FromFile(@"C:\Users\Abdullah\Desktop\Images\Images\Pen.png");
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string Active_Element = ((ComboBox)sender).Text;
+            label1.Text = Active_Element;
+            pictureBox1.Image = Image.FromFile($@"C:\Users\Abdullah\Desktop\Images\Images\{Active_Element}.png");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            comboBox1.SelectedIndex = 0;
+        }
     }
 }
