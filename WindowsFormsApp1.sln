@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateTimePicker", "DateTimeP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonthCalendar", "MonthCalendar\MonthCalendar.csproj", "{F1C70E9A-A1C9-400F-8B13-3838DDCB6F40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timer", "Timer\Timer.csproj", "{A53E84F6-E538-4F8E-81FF-35AEA2F81131}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{F1C70E9A-A1C9-400F-8B13-3838DDCB6F40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1C70E9A-A1C9-400F-8B13-3838DDCB6F40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1C70E9A-A1C9-400F-8B13-3838DDCB6F40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A53E84F6-E538-4F8E-81FF-35AEA2F81131}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A53E84F6-E538-4F8E-81FF-35AEA2F81131}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A53E84F6-E538-4F8E-81FF-35AEA2F81131}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A53E84F6-E538-4F8E-81FF-35AEA2F81131}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
