@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timer", "Timer\Timer.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotifyIcon", "NotifyIcon\NotifyIcon.csproj", "{FAE3FA2C-0E22-432A-B02E-DB54385AAD64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeViewAndImageList", "TreeViewAndImageList\TreeViewAndImageList.csproj", "{9D0421B5-0269-4684-A8D9-3BBE1341E1BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{FAE3FA2C-0E22-432A-B02E-DB54385AAD64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAE3FA2C-0E22-432A-B02E-DB54385AAD64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAE3FA2C-0E22-432A-B02E-DB54385AAD64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D0421B5-0269-4684-A8D9-3BBE1341E1BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D0421B5-0269-4684-A8D9-3BBE1341E1BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D0421B5-0269-4684-A8D9-3BBE1341E1BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D0421B5-0269-4684-A8D9-3BBE1341E1BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
