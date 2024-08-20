@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeViewAndImageList", "Tre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressBar", "ProgressBar\ProgressBar.csproj", "{F6FD4DAD-475E-476B-B6B8-E739C772BA33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListView", "ListView\ListView.csproj", "{0722F125-2C03-4366-A1D5-28729E600370}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{F6FD4DAD-475E-476B-B6B8-E739C772BA33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6FD4DAD-475E-476B-B6B8-E739C772BA33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6FD4DAD-475E-476B-B6B8-E739C772BA33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0722F125-2C03-4366-A1D5-28729E600370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0722F125-2C03-4366-A1D5-28729E600370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0722F125-2C03-4366-A1D5-28729E600370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0722F125-2C03-4366-A1D5-28729E600370}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
