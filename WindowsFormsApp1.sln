@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorProvider", "ErrorProvi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackBar", "TrackBar\TrackBar.csproj", "{68606C84-0915-4BC0-92A9-7C6AF5E9F87D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumericUpDown", "NumericUpDown\NumericUpDown.csproj", "{75D33AC0-DE8F-4B81-A9E1-A879D43CACC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{68606C84-0915-4BC0-92A9-7C6AF5E9F87D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68606C84-0915-4BC0-92A9-7C6AF5E9F87D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68606C84-0915-4BC0-92A9-7C6AF5E9F87D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75D33AC0-DE8F-4B81-A9E1-A879D43CACC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75D33AC0-DE8F-4B81-A9E1-A879D43CACC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75D33AC0-DE8F-4B81-A9E1-A879D43CACC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75D33AC0-DE8F-4B81-A9E1-A879D43CACC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
