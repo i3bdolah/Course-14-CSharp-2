@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressBar", "ProgressBar\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListView", "ListView\ListView.csproj", "{0722F125-2C03-4366-A1D5-28729E600370}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorProvider", "ErrorProvider\ErrorProvider.csproj", "{EB59913D-BDD7-4567-883C-5BF3F99F0A71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{0722F125-2C03-4366-A1D5-28729E600370}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0722F125-2C03-4366-A1D5-28729E600370}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0722F125-2C03-4366-A1D5-28729E600370}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB59913D-BDD7-4567-883C-5BF3F99F0A71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB59913D-BDD7-4567-883C-5BF3F99F0A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB59913D-BDD7-4567-883C-5BF3F99F0A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB59913D-BDD7-4567-883C-5BF3F99F0A71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
