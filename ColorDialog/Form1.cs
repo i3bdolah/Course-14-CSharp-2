@@ -52,5 +52,19 @@ namespace ColorDialog
             textBox1.Font = fontDialog1.Font;
             textBox1.ForeColor = fontDialog1.Color;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.InitialDirectory = @"C:\Users\Abdullah\Desktop";
+            saveFileDialog1.Title = "Save to be safe!";
+            saveFileDialog1.DefaultExt = "cpp";
+            saveFileDialog1.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 2;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show(saveFileDialog1.FileName);
+            }
+        }
     }
 }
