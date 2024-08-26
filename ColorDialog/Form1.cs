@@ -66,5 +66,41 @@ namespace ColorDialog
                 MessageBox.Show(saveFileDialog1.FileName);
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Multiselect = false;
+
+            openFileDialog1.InitialDirectory = @"C:\Users\Abdullah\Desktop";
+            openFileDialog1.Title = "Open to be OP!";
+            openFileDialog1.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            openFileDialog1.FilterIndex = 2;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show(openFileDialog1.FileName);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Multiselect = true;
+
+            openFileDialog1.InitialDirectory = @"C:\Users\Abdullah\Desktop";
+            openFileDialog1.Title = "Open Multi and be Healthy!";
+            openFileDialog1.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            openFileDialog1.FilterIndex = 2;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string str = "";
+                foreach (string filename in openFileDialog1.FileNames)
+                {
+                    str += filename;
+                    str += "\n";
+                }
+                MessageBox.Show(str);
+            }
+        }
     }
 }
