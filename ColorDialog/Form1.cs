@@ -102,5 +102,15 @@ namespace ColorDialog
                 MessageBox.Show(str);
             }
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.ShowNewFolderButton = true; // By Default is True also.
+
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show(folderBrowserDialog1.SelectedPath);
+            }
+        }
     }
 }
