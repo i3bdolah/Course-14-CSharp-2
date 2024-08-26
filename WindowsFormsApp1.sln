@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupBoxVsPanel", "GroupBox
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorDialog", "ColorDialog\ColorDialog.csproj", "{45F7EBF4-68EA-4F39-8178-26F41267CE5A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDI_Sample", "MDI_Sample\MDI_Sample.csproj", "{26A35483-4B79-41D8-8CCF-02AEAAE1FA50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +137,10 @@ Global
 		{45F7EBF4-68EA-4F39-8178-26F41267CE5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45F7EBF4-68EA-4F39-8178-26F41267CE5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45F7EBF4-68EA-4F39-8178-26F41267CE5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26A35483-4B79-41D8-8CCF-02AEAAE1FA50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26A35483-4B79-41D8-8CCF-02AEAAE1FA50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26A35483-4B79-41D8-8CCF-02AEAAE1FA50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26A35483-4B79-41D8-8CCF-02AEAAE1FA50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
