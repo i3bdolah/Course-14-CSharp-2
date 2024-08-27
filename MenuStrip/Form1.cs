@@ -59,7 +59,10 @@ namespace MenuStrip
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Exit");
+            Form frm = new Form2();
+            frm.MdiParent = this;
+
+            frm.Show();
         }
     }
 }
